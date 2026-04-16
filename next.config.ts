@@ -93,6 +93,16 @@ const nextConfig: NextConfig = {
         destination: '/merchandizing/:path*',
         permanent: true,
       },
+      {
+        source: '/wholesale-optimizer',
+        destination: '/merchandizing-optimizer',
+        permanent: true,
+      },
+      {
+        source: '/wholesale-optimizer/:path*',
+        destination: '/merchandizing-optimizer/:path*',
+        permanent: true,
+      },
     ]
   },
 
