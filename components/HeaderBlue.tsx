@@ -157,14 +157,13 @@ export const HeaderBlue = () => {
   ]
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-    <nav className="py-2 px-6 flex items-center justify-between bg-blue-900">
+    <nav className="py-4 px-6 flex items-center justify-between bg-[#00446a]">
       <div className="flex items-center gap-x-2">
         <MobileSidebar />
-       <Link href="/" className="flex items-center gap-2">
-       <Image className="block lg:hidden" src="/assets/logo.png" alt="logo" width={60} height={60} />
-        <Image className="hidden lg:block" src="/assets/logo.png" alt="logo" width={40} height={40} />
-        <Image className="hidden lg:block" src="/assets/white-logo.png" alt="logo" width={180} height={60} />
-      </Link>
+        <Link href="/" className="flex items-center gap-2">
+          <Image className="block lg:hidden" src="/assets/ferguson-logo.jpeg" alt="Ferguson logo" width={40} height={40} />
+          <Image className="hidden lg:block" src="/assets/ferguson-light.svg" alt="Ferguson" width={142} height={18} />
+        </Link>
       
       </div>
       <div className="flex items-center gap-x-4">
