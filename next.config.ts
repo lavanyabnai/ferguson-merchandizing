@@ -81,6 +81,21 @@ const nextConfig: NextConfig = {
     ]
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/merchandizing-optimizer',
+        destination: '/merchandizing',
+        permanent: true,
+      },
+      {
+        source: '/merchandizing-optimizer/:path*',
+        destination: '/merchandizing/:path*',
+        permanent: true,
+      },
+    ]
+  },
+
   // Redirects/rewrites optimization
   poweredByHeader: false,
   reactStrictMode: true,
