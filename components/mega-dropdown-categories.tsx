@@ -28,9 +28,10 @@ interface DropdownCategory {
 
 interface MegaDropdownProps {
   categories: DropdownCategory[]
+  trigger?: React.ReactNode
 }
 
-export function MegaDropdownCategories({ categories }: MegaDropdownProps) {
+export function MegaDropdownCategories({ categories, trigger }: MegaDropdownProps) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
@@ -44,12 +45,16 @@ export function MegaDropdownCategories({ categories }: MegaDropdownProps) {
     }
   }
 
+  const defaultTrigger = (
+    <button className="flex items-center justify-center size-10 rounded-full bg-background shadow-sm ring-1 ring-border">
+      <Image className="size-8" src="/assets/logo-4.png" width={32} height={32} alt="logo" />
+    </button>
+  )
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center justify-center size-10 rounded-full bg-background shadow-sm ring-1 ring-border">
-          <Image className="size-8" src="/assets/logo-4.png" width={32} height={32} alt="logo" />
-        </button>
+        {trigger ?? defaultTrigger}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[640px] p-4" sideOffset={8}>
         <div className="max-h-[80vh] overflow-y-auto pr-1 space-y-6">
